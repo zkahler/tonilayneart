@@ -88,7 +88,8 @@ const lightboxDetails = document.getElementById('lightboxDetails');
 
 function openLightbox(item) {
     const img = item.querySelector('.gallery-img');
-    lightboxImg.style.cssText = img.style.cssText;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = item.dataset.title || '';
     lightboxTitle.textContent   = item.dataset.title || '';
     lightboxDetails.textContent = [item.dataset.medium, item.dataset.size]
         .filter(Boolean).join('  ·  ');
